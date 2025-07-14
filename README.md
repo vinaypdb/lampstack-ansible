@@ -151,7 +151,7 @@ __pycache__/
 ## 👨‍💻 Author
 
 **Your Name**  
-GitHub: [@yourgithub](https://github.com/yourgithub)
+GitHub: [@vinaypdb](https://github.com/vinaypdb)
 
 ---
 
