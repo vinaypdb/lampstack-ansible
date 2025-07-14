@@ -1,0 +1,11 @@
+- name: LAMP Stack Setup on Ubuntu
+  hosts: lamp
+  become: true
+
+  roles:
+    - apache
+    - mysql
+    - php
+    - ufw
+    - virtualhost
+

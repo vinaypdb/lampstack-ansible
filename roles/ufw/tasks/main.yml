@@ -1,0 +1,10 @@
+- name: Allow Apache through UFW
+  ufw:
+    rule: allow
+    name: "Apache"
+
+- name: Enable UFW and set default policy to allow
+  ufw:
+    state: enabled
+    policy: allow
+

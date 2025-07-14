@@ -1,0 +1,26 @@
+- name: Create document root directory
+  file:
+    path: /var/www/mysite
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Add sample index.php file
+  copy:
+    dest: /var/www/mysite/index.php
+    content: "<?php phpinfo(); ?>"
+
+- name: Deploy virtual host configuration
+  template:
+    src: vhost.conf.j2
+    dest: /etc/apache2/sites-available/mysite.conf
+
+- name: Enable virtual host
+  command: a2ensite mysite.conf
+  notify: Reload Apache
+
+- name: Disable default site
+  command: a2dissite 000-default.conf
+  notify: Reload Apache
+
